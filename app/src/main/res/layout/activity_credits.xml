@@ -77,14 +77,13 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
-        android:text="@string/an_alc_2_0_assessment_project"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/textView1u"
         android:layout_alignEnd="@+id/imageView7"
-        android:layout_marginBottom="5dp"/>
+        android:layout_below="@+id/textView1u"
+        android:layout_marginBottom="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/an_alc_2_0_assessment_project"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView5"
@@ -100,56 +99,55 @@
         android:id="@+id/textView13u"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:paddingRight="20dp"
         android:text="CREDITS:"
         android:textAllCaps="true"
         android:textColor="@color/colorBlack"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="11dp"
         android:layout_below="@+id/relativeLayout"
-        android:layout_alignStart="@+id/textView16u"
-        android:layout_marginStart="42dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView15u"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView16u"
+        android:layout_below="@+id/textView13u"
+        android:layout_marginTop="15dp"
         android:paddingRight="20dp"
         android:text="@string/cryptocompare_web_api"
         android:textAlignment="viewStart"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/textView13u"
-        android:layout_alignEnd="@+id/textView16u" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/textView1u"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/relativeLayout1"
+        android:layout_below="@+id/textView16u"
+        android:layout_marginTop="9dp"
         android:paddingRight="20dp"
         android:text="@string/and_others"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:layout_below="@+id/textView16u"
-        android:layout_alignEnd="@+id/relativeLayout1"
-        android:layout_marginTop="9dp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/textView16u"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView4"
+        android:layout_below="@+id/textView15u"
+        android:layout_marginTop="9dp"
         android:paddingRight="20dp"
         android:text="@string/google_andela_team"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:layout_below="@+id/textView15u"
-        android:layout_alignEnd="@+id/textView4"
-        android:layout_marginTop="9dp" />
+        android:textSize="16sp" />
 
 
 </RelativeLayout>

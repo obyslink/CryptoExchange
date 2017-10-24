@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FastCalculatorActivity"/>
+            android:name=".FastCalculatorActivity"
+            android:label="@string/quickcon"/>
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,9 +31,13 @@
             android:name=".ExchangeRateActivity"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".CoinActivity" />
-        <activity android:name=".AboutActivity"/>
-        <activity android:name=".CreditsActivity"/>
+        <activity android:name=".CoinActivity"
+            android:label="Converter"/>
+        <activity android:name=".AboutActivity"
+            android:label="@string/about_us"/>
+        <activity android:name=".CreditsActivity"
+            android:label="@string/Credits"
+            android:theme="@android:style/Theme.Dialog"/>
     </application>
 
 </manifest>

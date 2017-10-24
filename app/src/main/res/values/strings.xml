@@ -28,5 +28,8 @@
     <string name="github_repo_https_github_com_obyslink">GitHub Repo: https://github.com/obyslink</string>
     <string name="version_1_0_2017">Version 1.0 (2017)</string>
     <string name="an_alc_2_0_intermediate_track_challenge_app">An ALC 2.0 Intermediate Track Challenge App</string>
+    <string name="Credits">Appreciation</string>
+    <string name="about_us">About Us</string>
+    <string name="quickcon">Quick Converter</string>
 
 </resources>
