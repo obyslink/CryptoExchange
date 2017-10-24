@@ -11,17 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity
+            android:name=".FastCalculatorActivity"/>
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-         </activity>
-        <activity android:name=".CoinActivity"/>
+        </activity>
+        <activity
+            android:name=".ExchangeConvertActivity">
+            <meta-data
+                android:name="3-Way Converter"
+                android:value="davidzapps.cryptoexchange.ExchangeRateActivity" />
+        </activity>
+        <activity
+            android:name=".ExchangeRateActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".CoinActivity" />
+        <activity android:name=".AboutActivity"/>
+        <activity android:name=".CreditsActivity"/>
     </application>
 
 </manifest>

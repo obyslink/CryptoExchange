@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <item android:title="@string/quick_menu">
+        <menu>
+            <item
+                android:id="@+id/quick_convertMenu"
+                android:icon="@android:drawable/presence_away"
+                android:title="@string/fast_convert" />
+
+            <item
+                android:id="@+id/quick_aboutMenu"
+                android:icon="@android:drawable/star_on"
+                android:title="@string/about_app" />
+
+            <item
+                android:id="@+id/quick_creditsMenu"
+                android:icon="@android:drawable/presence_audio_online"
+                android:title="@string/credits" />
+        </menu>
+
+
+    </item>
+
+</menu>

@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">"CryptoExchange "</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="amount_hint">amount hint</string>
+    <string name="convert">convert</string>
+    <string name="eth_sign">ETH </string>
+    <string name="btc_sign">BTC</string>
+
+    <string name="refresh">Refresh</string>
+    <string name="order">Order</string>
+    <string name="exit">Exit</string>
+    <string name="about">About</string>
+    <string name="instr1">Input amount into any coin or currency to convert</string>
+    <string name="quick_menu">Quick Menu</string>
+    <string name="fast_convert">Fast Convert</string>
+    <string name="about_app">About App</string>
+    <string name="credits">Credits</string>
+    <string name="content_desc">content_desc</string>
+    <string name="cryptoexchange_v1_0_alc_2_0_assessment">CryptoExchange v1.0 - ALC 2.0 Assessment</string>
+    <string name="an_alc_2_0_assessment_project">...an ALC 2.0 Assessment Project</string>
+    <string name="cryptocompare_web_api">CryptoCompare WEB API</string>
+    <string name="google_andela_team">Google / Andela Team</string>
+    <string name="and_others">And Others...</string>
+    <string name="contact_2348133497153">Contact: +2348133497153</string>
+    <string name="email_olebueziobinna_gmail_com">Email: olebueziobinna@gmail.com</string>
+    <string name="github_repo_https_github_com_obyslink">GitHub Repo: https://github.com/obyslink</string>
+    <string name="version_1_0_2017">Version 1.0 (2017)</string>
+    <string name="an_alc_2_0_intermediate_track_challenge_app">An ALC 2.0 Intermediate Track Challenge App</string>
+
 </resources>

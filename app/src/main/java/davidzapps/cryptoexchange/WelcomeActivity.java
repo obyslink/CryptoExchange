@@ -10,7 +10,7 @@ import android.os.Handler;
  */
 
 public class WelcomeActivity extends Activity {
-    //for splash screen
+    //SPLASH SCREEN ACTIVITY FOR 3000
     private static int SPLASH_TIME_OUT = 3000;
 
     @Override
@@ -21,7 +21,7 @@ public class WelcomeActivity extends Activity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public  void run(){
-                Intent mainIntent = new Intent(WelcomeActivity.this, CoinActivity.class);
+                Intent mainIntent = new Intent(WelcomeActivity.this, ExchangeRateActivity.class);
                 startActivity(mainIntent);
                 finish();
             }

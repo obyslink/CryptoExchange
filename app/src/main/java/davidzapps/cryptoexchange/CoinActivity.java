@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -33,20 +32,24 @@ public class CoinActivity extends Activity{
     MaterialSpinner fromSpinner,toSpinner;
     RadioGroup radioGroup;
 
+
+
     /*Button btnConvert;*/
     ImageButton btnConvert;
+
+
 
     ImageView coinImage;
     TextView toTextView;
 
-    String[] money = {"USD","EUR","GBP"};
+    String[] money = {"NGN","USD","EUR","GBP","INR","JPY","GBP","AUD","CAD","CHF","CNY","KES","GHS","UGX","ZAR","XAF","NZD","MYR","BND","GEL","RUB"};
     String[] coin = {"BTC","ETH","ETC","XRP","LTC","XMR","DASH","MAID","AUR","XEM"};
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calc_online);
+        setContentView(R.layout.activity_fast_convert);
 
         mService = Common.getCoinService();
 
@@ -55,10 +58,7 @@ public class CoinActivity extends Activity{
 
         toTextView = (TextView)findViewById(R.id.toTextView);
 
-
-
         btnConvert = (ImageButton) findViewById(R.id.btnConvert);
-
         btnConvert.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -94,7 +94,7 @@ public class CoinActivity extends Activity{
             setCoin2CoinSource();
         else if(money2coin.isSelected())
             setMoney2CoinSource();
-        //auto choose this to avoid exception error
+        //auto-choose setMoney2CoinSource to avoid exception error
         else setMoney2CoinSource();
     }
 
@@ -114,7 +114,7 @@ public class CoinActivity extends Activity{
 
     private void calculateValue() {
         final ProgressDialog mDialog = new ProgressDialog(CoinActivity.this);
-        mDialog.setMessage("Please waiting...");
+        mDialog.setMessage("Please wait...");
         mDialog.show();
 
         final String coinName = toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString();
@@ -125,6 +125,8 @@ public class CoinActivity extends Activity{
             @Override
             public void onResponse(Call<Coin> call, Response<Coin> response) {
                 mDialog.dismiss();
+
+                //selection for coins
                 if(coinName.equals("BTC"))
                     showData(response.body().getBTC());
                 else if(coinName.equals("ETC"))
@@ -143,12 +145,53 @@ public class CoinActivity extends Activity{
                     showData(response.body().getXMR());
                 else if(coinName.equals("XEM"))
                     showData(response.body().getXEM());
+
+                //selection for currencies
+                else if(coinName.equals("XAF"))
+                    showData(response.body().getXAF());
+                else if(coinName.equals("NGN"))
+                    showData(response.body().getNGN());
                 else if(coinName.equals("USD"))
                     showData(response.body().getUSD());
                 else if(coinName.equals("EUR"))
                     showData(response.body().getEUR());
+                else if(coinName.equals("JPY"))
+                    showData(response.body().getJPY());
                 else if(coinName.equals("GBP"))
                     showData(response.body().getGBP());
+                else if(coinName.equals("AUD"))
+                    showData(response.body().getAUD());
+                else if(coinName.equals("INR"))
+                    showData(response.body().getINR());
+                else if(coinName.equals("RUB"))
+                    showData(response.body().getRUB());
+                else if(coinName.equals("GEL"))
+                    showData(response.body().getGEL());
+                else if(coinName.equals("BND"))
+                    showData(response.body().getBND());
+                else if(coinName.equals("MYR"))
+                    showData(response.body().getMYR());
+                else if(coinName.equals("NZD"))
+                    showData(response.body().getNZD());
+                else if(coinName.equals("ZAF"))
+                    showData(response.body().getZAF());
+                else if(coinName.equals("ZAR"))
+                    showData(response.body().getZAR());
+                else if(coinName.equals("UGX"))
+                    showData(response.body().getUGX());
+                else if(coinName.equals("GHX"))
+                    showData(response.body().getGHS());
+                else if(coinName.equals("KES"))
+                    showData(response.body().getKES());
+                else if(coinName.equals("CNY"))
+                    showData(response.body().getCNY());
+                else if(coinName.equals("CHF"))
+                    showData(response.body().getCHF());
+                else if(coinName.equals("CAD"))
+                    showData(response.body().getCAD());
+
+                //handle exception by showing BTC value
+                else showData(response.body().getBTC());
 
 
             }
@@ -213,6 +256,11 @@ public class CoinActivity extends Activity{
                     .into(coinImage);
             toTextView.setText(value);
         }
+        // CURRENCY LIST
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("NGN")){
+
+            toTextView.setText("₦" +value);
+        }
         else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("USD")){
 
             toTextView.setText("$" +value);
@@ -225,6 +273,71 @@ public class CoinActivity extends Activity{
 
             toTextView.setText("€" +value);
         }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("INR")){
+
+            toTextView.setText("₨" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("JPY")){
+
+            toTextView.setText("¥" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("AUD")){
+
+            toTextView.setText("$" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("CAD")){
+
+            toTextView.setText("$" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("CHF")){
+
+            toTextView.setText("₣" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("CNY")){
+
+            toTextView.setText("¥" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("KES")){
+
+            toTextView.setText("€" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("GHS")){
+
+            toTextView.setText("Sh" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("UGX")){
+
+            toTextView.setText("Sh" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("ZAR")){
+
+            toTextView.setText("R" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("XAF")){
+
+            toTextView.setText("₣" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("NZD")){
+
+            toTextView.setText("$" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("MYR")){
+
+            toTextView.setText("RM" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("BND")){
+
+            toTextView.setText("$" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("GEL")){
+
+            toTextView.setText("ლ" +value);
+        }
+        else if(toSpinner.getItems().get(toSpinner.getSelectedIndex()).toString().equals("RUB")){
+
+            toTextView.setText("р." +value);
+        }
+
 
     }
 
