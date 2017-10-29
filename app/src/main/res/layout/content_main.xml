@@ -12,12 +12,42 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="davidzapps.cryptoexchange.FastCalculatorActivity">
 
+    <ProgressBar
+        android:id="@+id/exchangerate_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        />
+
+    <TextView
+        android:id="@+id/LoadingCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorDeep"
+        android:padding="3dp"
+        android:layout_marginBottom="2dp"
+        android:text="@string/exchange_rates_updated"
+        android:textStyle="italic"
+        android:textColor="@color/colorAccent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp">
+
+
 
         <TextView
             android:layout_width="0dp"

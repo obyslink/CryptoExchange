@@ -31,5 +31,8 @@
     <string name="Credits">Appreciation</string>
     <string name="about_us">About Us</string>
     <string name="quickcon">Quick Converter</string>
+    <string name="visit_repo">Repository</string>
+    <string name="repo_name">Obyslink Github Repo</string>
+    <string name="exchange_rates_updated">Exchange Rates Updated Successfully! Click to convert</string>
 
 </resources>

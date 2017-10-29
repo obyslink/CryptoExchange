@@ -12,6 +12,11 @@
         android:orderInCategory="100"
         android:title="@string/refresh"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/visit_repo"
+        android:orderInCategory="100"
+        android:title="@string/visit_repo"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_about"

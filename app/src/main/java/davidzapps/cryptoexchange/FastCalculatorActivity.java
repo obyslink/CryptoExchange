@@ -2,10 +2,13 @@ package davidzapps.cryptoexchange;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.IdRes;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -347,6 +350,31 @@ public class FastCalculatorActivity extends Activity {
         }
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.general_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //Menu options for repository, about and exit
+        if (id == R.id.visit_repo) {
+            Intent intent = new Intent(FastCalculatorActivity.this, RepositoryWebView.class);
+            startActivity(intent);
+        }else if (id == R.id.action_about) {
+            Intent intent = new Intent(FastCalculatorActivity.this, AboutActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.action_exit) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

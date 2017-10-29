@@ -1,9 +1,11 @@
 package davidzapps.cryptoexchange;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -20,6 +22,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +41,8 @@ import com.android.volley.toolbox.Volley;
 
 import davidzapps.cryptoexchange.Model.GetRates;
 
+import static davidzapps.cryptoexchange.R.id.items_listView;
+
 /**
  * Created by OBINNA on 10/21/2017.
  */
@@ -54,6 +59,12 @@ public class ExchangeRateActivity extends AppCompatActivity
 
     SharedPreferences settings;
     int orderMode;
+
+    private ProgressBar mProgressBar;
+    private TextView mLoadingText;
+    private int mProgressStatus = 0;
+    private Handler mHandler = new Handler();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +84,7 @@ public class ExchangeRateActivity extends AppCompatActivity
 
         mainView = (LinearLayout) findViewById(R.id.main_view);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.layout_swipe_refresh);
-        ratesListView = (ListView) findViewById(R.id.items_listView);
+        ratesListView = (ListView) findViewById(items_listView);
         ratesListView.setDivider(null); //to remove dividers from the list view
 
         ratesLedger = new GetRates();
@@ -166,8 +177,37 @@ public class ExchangeRateActivity extends AppCompatActivity
         }
     }
 
-    //Get JSON objects for currencies using the API URLs
+    //Get JSON objects from API and handle progress bar
     public void downloadRates() {
+
+        //handling the progress bar with ProgressBar and Handler
+        mProgressBar = (ProgressBar) findViewById(R.id.exchangerate_progressbar);
+        mLoadingText = (TextView) findViewById(R.id.LoadingCompleteTextView);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (mProgressStatus < 100){
+                    mProgressStatus++;
+                    android.os.SystemClock.sleep(50);
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            mProgressBar.setProgress(mProgressStatus);
+                        }
+                    });
+                }
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        mLoadingText.setVisibility(View.VISIBLE);
+                    }
+                });
+            }
+        }).start();
+
+
+        //calling rates to objects through JSON from API
         ratesLedger = new GetRates();
 
         JsonObjectRequest requestNameAvatar = new JsonObjectRequest(Request.Method.GET, requestUrl, null,
@@ -193,9 +233,8 @@ public class ExchangeRateActivity extends AppCompatActivity
                             ratesLedger.orderList(orderMode);
                             ratesListView.setAdapter(new MyAdapter(ratesLedger.ratesArrayList));
 
-
                         } catch (Exception e) {
-                            Toast.makeText(getApplicationContext(), "Cannot download currency list", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Network Error! Refresh", Toast.LENGTH_LONG).show();
                         }
                     }
                 }, new Response.ErrorListener() {
@@ -212,6 +251,8 @@ public class ExchangeRateActivity extends AppCompatActivity
 
         rQueue.add(requestNameAvatar);
     }
+
+
 
     @Override
     protected void onStop() {
@@ -254,6 +295,9 @@ public class ExchangeRateActivity extends AppCompatActivity
             SharedPreferences.Editor editor = settings.edit();
             editor.putInt("orderMode", orderMode);
             editor.apply();
+        }else if (id == R.id.visit_repo) {
+            Intent intent = new Intent(ExchangeRateActivity.this, RepositoryWebView.class);
+            startActivity(intent);
         }else if (id == R.id.action_about) {
             Intent intent = new Intent(ExchangeRateActivity.this, AboutActivity.class);
             startActivity(intent);

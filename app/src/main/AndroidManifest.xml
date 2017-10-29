@@ -35,6 +35,8 @@
             android:label="Converter"/>
         <activity android:name=".AboutActivity"
             android:label="@string/about_us"/>
+        <activity android:name=".RepositoryWebView"
+            android:label="@string/repo_name"/>
         <activity android:name=".CreditsActivity"
             android:label="@string/Credits"
             android:theme="@android:style/Theme.Dialog"/>
