@@ -17,23 +17,29 @@ Uses Internet permissions in AndroidManifest.xml file.
 
 compile fileTree(dir: 'libs', include: ['*.jar']) androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { exclude group: 'com.android.support', module: 'support-annotations' }) compile 'com.android.support:appcompat-v7:26.+' compile 'com.android.support.constraint:constraint-layout:1.0.2' testCompile 'junit:junit:4.12'
 
-//Add Library
-compile 'com.android.support:cardview-v7:26.+'
-compile 'com.android.support:support-v4:26.+'
+    
+    //Add Library
+    compile 'com.android.support:cardview-v7:26.+'
+    compile 'com.android.support:support-v4:26.+'
 
-//material Spinner
-compile 'com.jaredrummler:material-spinner:1.1.0'
+    //material Spinner
+    compile 'com.jaredrummler:material-spinner:1.1.0'
 
-//Retrofit + Picassa
-compile 'com.squareup.retrofit2:retrofit:2.3.0'
-compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-compile 'com.squareup.picasso:picasso:2.5.2'
+    //Retrofit + Picassa
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
-// RecyclerView
-compile 'com.android.support:recyclerview-v7:26.+'
+    // RecyclerView
+    compile 'com.android.support:recyclerview-v7:26.+'
 
 
-compile 'com.android.support:design:26.+'
+    compile 'com.android.support:design:26.+'
 
-// Glide
-compile 'com.github.bumptech.glide:glide:3.7.0'
+    // Glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //
+    compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    compile 'com.android.volley:volley:1.0.0'
+    testCompile 'junit:junit:4.12'
