@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="davidzapps.cryptoexchange">
+    package="tech.dappworld.cryptoexchange">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,34 +13,42 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FastCalculatorActivity"
-            android:label="@string/quickcon"/>
-        <activity android:name=".WelcomeActivity">
+            android:name=".WelcomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ExchangeConvertActivity">
+        <activity android:name=".ExchangeConvertActivity">
             <meta-data
                 android:name="3-Way Converter"
-                android:value="davidzapps.cryptoexchange.ExchangeRateActivity" />
+                android:value="tech.da.cryptoexchange.ExchangeRateActivity" />
         </activity>
         <activity
-            android:name=".ExchangeRateActivity"
+            android:name=".MainActivity"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".CoinActivity"
-            android:label="Converter"/>
-        <activity android:name=".AboutActivity"
-            android:label="@string/about_us"/>
-        <activity android:name=".RepositoryWebView"
-            android:label="@string/repo_name"/>
-        <activity android:name=".CreditsActivity"
-            android:label="@string/Credits"
-            android:theme="@android:style/Theme.Dialog"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/about_us"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RepositoryWebViewActivity"
+            android:label="@string/repo_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OfflineCalculatorActivity"
+            android:label="@string/offline_calculator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FastCalculatorNavActivity"
+            android:label="@string/title_activity_fast_calculator_nav"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DummyMainActivity"
+            android:label="@string/title_dummy_activity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -4,40 +4,27 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorDeep"
-        tools:context="davidzapps.cryptoexchange.WelcomeActivity">
+        tools:context="tech.dappworld.cryptoexchange.WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:src="@mipmap/ic_launcher" />
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="240dp"
             android:layout_height="240dp"
             android:src="@drawable/welcome"
-            android:layout_marginTop="115dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/textV4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
-        android:text="@string/an_alc_2_0_intermediate_track_challenge_app"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_below="@+id/imageView4"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/version_1_0_2017"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_below="@+id/textV4"
-        android:layout_alignEnd="@+id/textV4"
-        android:layout_marginTop="8dp" />
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
 
 </RelativeLayout>
 

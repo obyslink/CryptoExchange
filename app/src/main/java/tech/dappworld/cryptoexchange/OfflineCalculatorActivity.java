@@ -1,0 +1,304 @@
+package tech.dappworld.cryptoexchange;
+
+import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import java.text.DecimalFormat;
+import android.databinding.DataBindingUtil;
+
+import tech.dappworld.cryptoexchange.databinding.ActivityOfflineCalculatorBinding;
+
+public class OfflineCalculatorActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener {
+
+    private ActivityOfflineCalculatorBinding binding;
+
+    private double valueOne = Double.NaN;
+    private double valueTwo;
+
+    private static final char ADDITION = '+';
+    private static final char SUBTRACTION = '-';
+    private static final char MULTIPLICATION = '*';
+    private static final char DIVISION = '/';
+
+    private char CURRENT_ACTION;
+    private DecimalFormat decimalFormat;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        decimalFormat = new DecimalFormat("#.##########");
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_offline_calculator);
+
+        binding.buttonDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + ".");
+            }
+        });
+
+        binding.buttonZero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "0");
+            }
+        });
+
+        binding.buttonOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "1");
+            }
+        });
+
+        binding.buttonTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "2");
+            }
+        });
+
+        binding.buttonThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "3");
+            }
+        });
+
+        binding.buttonFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "4");
+            }
+        });
+
+        binding.buttonFive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "5");
+            }
+        });
+
+        binding.buttonSix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "6");
+            }
+        });
+
+        binding.buttonSeven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "7");
+            }
+        });
+
+        binding.buttonEight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "8");
+            }
+        });
+
+        binding.buttonNine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.editText.setText(binding.editText.getText() + "9");
+            }
+        });
+
+        binding.buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                computeCalculation();
+                CURRENT_ACTION = ADDITION;
+                binding.infoTextView.setText(decimalFormat.format(valueOne) + "+");
+                binding.editText.setText(null);
+            }
+        });
+
+        binding.buttonSubtract.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                computeCalculation();
+                CURRENT_ACTION = SUBTRACTION;
+                binding.infoTextView.setText(decimalFormat.format(valueOne) + "-");
+                binding.editText.setText(null);
+            }
+        });
+
+        binding.buttonMultiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                computeCalculation();
+                CURRENT_ACTION = MULTIPLICATION;
+                binding.infoTextView.setText(decimalFormat.format(valueOne) + "*");
+                binding.editText.setText(null);
+            }
+        });
+
+        binding.buttonDivide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                computeCalculation();
+                CURRENT_ACTION = DIVISION;
+                binding.infoTextView.setText(decimalFormat.format(valueOne) + "/");
+                binding.editText.setText(null);
+            }
+        });
+
+        binding.buttonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                computeCalculation();
+                binding.infoTextView.setText(binding.infoTextView.getText().toString() +
+                        decimalFormat.format(valueTwo) + " = " + decimalFormat.format(valueOne));
+                valueOne = Double.NaN;
+                CURRENT_ACTION = '0';
+            }
+        });
+
+        binding.buttonClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(binding.editText.getText().length() > 0) {
+                    CharSequence currentText = binding.editText.getText();
+                    binding.editText.setText(currentText.subSequence(0, currentText.length()-1));
+                }
+                else {
+                    valueOne = Double.NaN;
+                    valueTwo = Double.NaN;
+                    binding.editText.setText("");
+                    binding.infoTextView.setText("");
+                }
+            }
+        });
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+    }
+
+    private void computeCalculation() {
+        if(!Double.isNaN(valueOne)) {
+            valueTwo = Double.parseDouble(binding.editText.getText().toString());
+            binding.editText.setText(null);
+
+            if(CURRENT_ACTION == ADDITION)
+                valueOne = this.valueOne + valueTwo;
+            else if(CURRENT_ACTION == SUBTRACTION)
+                valueOne = this.valueOne - valueTwo;
+            else if(CURRENT_ACTION == MULTIPLICATION)
+                valueOne = this.valueOne * valueTwo;
+            else if(CURRENT_ACTION == DIVISION)
+                valueOne = this.valueOne / valueTwo;
+        }
+        else {
+            try {
+                valueOne = Double.parseDouble(binding.editText.getText().toString());
+            }
+            catch (Exception e){}
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.general_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //Menu options for repository, about and exit
+        if (id == R.id.action_exit) {
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        //Navigation bar menu
+        int id = item.getItemId();
+
+        if (id == R.id.quick_convertMenu) {
+            Intent intent = new Intent(OfflineCalculatorActivity.this, FastCalculatorNavActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.quick_aboutMenu) {
+            Intent intent = new Intent(OfflineCalculatorActivity.this, AboutActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.homeExchangeRate) {
+            Intent intent = new Intent(OfflineCalculatorActivity.this, MainActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.offlineCalculator) {
+            Intent intent = new Intent(OfflineCalculatorActivity.this, OfflineCalculatorActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.visit_repo) {
+            Intent intent = new Intent(OfflineCalculatorActivity.this, RepositoryWebViewActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.share) {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent
+                    .putExtra(
+                            Intent.EXTRA_TEXT,
+                            "I am using "
+                                    + getString(R.string.app_name)
+                                    + " App ! Why don't you try it out...\nInstall "
+                                    + getString(R.string.app_name)
+                                    + " now !\nhttps://play.google.com/store/apps/details?id="
+                                    + getPackageName());
+            sendIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
+                    getString(R.string.app_name) + " App !");
+            sendIntent.setType("text/plain");
+
+            startActivity(Intent.createChooser(sendIntent,
+                    getString(R.string.text_share_app)));
+        }
+
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+}

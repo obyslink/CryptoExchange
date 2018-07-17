@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="OfflineCalculatorActivity"
+            type="tech.dappworld.cryptoexchange.OfflineCalculatorActivity"/>
+    </data>
+<android.support.v4.widget.DrawerLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme1"
+        android:orientation="vertical"
+        tools:context="tech.dappworld.cryptoexchange.FastCalculatorNavActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/appBarl"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorDeep"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="40dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_alignParentLeft="true" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toEndOf="@+id/imageView"
+                        android:fontFamily="casual"
+                        android:text="CRYPTOEXCHANGE"
+                        android:textAppearance="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_toRightOf="@+id/imageView" />
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/textView"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true">
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bgtopb"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorDeep"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            tools:context="tech.dappworld.cryptoexchange.OfflineCalculatorActivity">
+
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:paddingTop="8dp"
+                android:background="@drawable/layout_white_bg_with_radius"
+                android:elevation="@dimen/ref_code_btn_elevation_small"
+                android:layout_height="wrap_content"  >
+
+
+                <TextView
+                    android:id="@+id/infoTextView"
+                    android:background="@color/white"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="25sp"
+                    android:layout_marginBottom="10dp"
+                    android:enabled="false"/>
+
+            </TableRow>
+            <TableRow>
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="bottom"
+                    android:enabled="false"
+                    android:gravity="bottom"
+                    android:lines="2"
+                    android:textColor="@color/colorAccent"
+                    android:maxLines="2"
+                    android:textSize="14sp"
+                    />
+
+            </TableRow>
+
+
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <Button
+                    android:id="@+id/buttonSeven"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="0dip"
+                    android:textSize="25sp"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/buttonEight"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:textSize="25sp"
+                    android:layout_height="wrap_content"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/buttonNine"
+                    android:layout_width="0dip"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="9" />
+
+                <Button
+                    android:id="@+id/buttonAdd"
+                    android:layout_width="0dip"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight="0.25"
+                    android:textSize="25sp"
+                    android:layout_height="wrap_content"
+                    android:text="+" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:layout_marginBottom="5dp">
+                <Button
+                    android:id="@+id/buttonFour"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/buttonFive"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/buttonSix"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:textSize="25sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="wrap_content"
+                    android:text="6" />
+
+                <Button
+                    android:id="@+id/buttonSubtract"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="-" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <Button
+                    android:id="@+id/buttonOne"
+                    android:layout_width="0dip"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/buttonTwo"
+                    android:layout_width="0dip"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/buttonThree"
+                    android:layout_width="0dip"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="3" />
+
+                <Button
+                    android:id="@+id/buttonDivide"
+                    android:layout_width="0dip"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="/" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp">
+
+                <Button
+                    android:id="@+id/buttonZero"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp"
+                    android:text="0" />
+
+                <Button
+                    android:id="@+id/buttonDot"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp"
+                    android:text="." />
+
+                <Button
+                    android:id="@+id/buttonEqual"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp"
+                    android:text="=" />
+
+                <Button
+                    android:id="@+id/buttonMultiply"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="25sp"
+                    android:text="*" />
+                <Button
+                    android:id="@+id/buttonClear"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="c" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="250dp"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:elevation="@dimen/ref_code_btn_elevation_small"
+                    android:layout_marginTop="@dimen/marginTopForBelowLogo"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/imgLinearLayout"
+                    android:background="@drawable/layout_bg_no_top_radius"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/full_name_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center"
+                        android:textColor="@color/colorAccent1"
+                        android:textSize="18sp"
+                        android:background="@color/colorAccent"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        android:background="@null">
+
+
+
+                        <ImageView
+                            android:id="@+id/imageViewG"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/xmr"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true" />
+
+                        <ImageView
+                            android:id="@+id/imageViewI"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/nvc"
+                            android:paddingRight="10dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toStartOf="@+id/imageViewG"
+                            android:layout_toLeftOf="@+id/imageViewG" />
+
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/via"
+                            android:paddingRight="10dp"
+                            android:layout_alignTop="@+id/FastCalcLayout"
+                            android:layout_alignStart="@+id/textView8"
+                            android:layout_alignLeft="@+id/textView8" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/qbc"
+                            android:paddingRight="10dp"
+                            android:layout_alignTop="@+id/imageView6"
+                            android:layout_alignStart="@+id/FCBtn"
+                            android:layout_alignLeft="@+id/FCBtn" />
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:background="@color/colorAccent1"
+        app:itemTextColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginTop="0dp"
+        android:fitsSystemWindows="false"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
+</layout>
