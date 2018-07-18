@@ -22,17 +22,12 @@ Screenshots
 
 Click to view.
 
-### Mutt
+### App Interface
 
-[![mutt dark](https://github.com/altercation/solarized/raw/master/img/screen-mutt-dark-th.png)](https://github.com/altercation/solarized/raw/master/img/screen-mutt-dark.png)
-[![mutt light](https://github.com/altercation/solarized/raw/master/img/screen-mutt-light-th.png)](https://github.com/altercation/solarized/raw/master/img/screen-mutt-light.png)
-
-### ScreenShots
-
-    [![mutt light](https://lh3.googleusercontent.com/EXG5g879XKsZnJL4dleSNuJwEpnX0s1-ntzJJNqK8LOnh6wB6lnKhvc4LOI2Q3SEeBaQ=w720-h310-rw)](https://lh3.googleusercontent.com/EXG5g879XKsZnJL4dleSNuJwEpnX0s1-ntzJJNqK8LOnh6wB6lnKhvc4LOI2Q3SEeBaQ=w720-h310-rw)
-    [![mutt light](https://lh3.googleusercontent.com/u8qkfzAIme7uFtZaUzxXccQlP1V8x2gL4Wl9AJ3JPeIbMAm59CIUuAZ1IefDMNo2Lrak=w720-h310-rw)](https://lh3.googleusercontent.com/u8qkfzAIme7uFtZaUzxXccQlP1V8x2gL4Wl9AJ3JPeIbMAm59CIUuAZ1IefDMNo2Lrak=w720-h310-rw)
-    [![mutt light](https://lh3.googleusercontent.com/XKHBiMVtmBxyAVkYllk5qC8RRlJQ2NyOxt3dwTJmdHATuS9uZMdGIyVMgvVA7rwS_yU=w720-h310-rw)](https://lh3.googleusercontent.com/XKHBiMVtmBxyAVkYllk5qC8RRlJQ2NyOxt3dwTJmdHATuS9uZMdGIyVMgvVA7rwS_yU=w720-h310-rw)
-    [![mutt light](https://lh3.googleusercontent.com/EXG5g879XKsZnJL4dleSNuJwEpnX0s1-ntzJJNqK8LOnh6wB6lnKhvc4LOI2Q3SEeBaQ=w720-h310-rw)](https://lh3.googleusercontent.com/EXG5g879XKsZnJL4dleSNuJwEpnX0s1-ntzJJNqK8LOnh6wB6lnKhvc4LOI2Q3SEeBaQ=w720-h310-rw)
+[![mutt dark](https://lh3.googleusercontent.com/EXG5g879XKsZnJL4dleSNuJwEpnX0s1-ntzJJNqK8LOnh6wB6lnKhvc4LOI2Q3SEeBaQ=w720-h310-rw)](https://lh3.googleusercontent.com/EXG5g879XKsZnJL4dleSNuJwEpnX0s1-ntzJJNqK8LOnh6wB6lnKhvc4LOI2Q3SEeBaQ=w720-h310-rw)
+[![mutt light](https://lh3.googleusercontent.com/u8qkfzAIme7uFtZaUzxXccQlP1V8x2gL4Wl9AJ3JPeIbMAm59CIUuAZ1IefDMNo2Lrak=w720-h310-rw)](https://lh3.googleusercontent.com/u8qkfzAIme7uFtZaUzxXccQlP1V8x2gL4Wl9AJ3JPeIbMAm59CIUuAZ1IefDMNo2Lrak=w720-h310-rw)
+[![mutt light](https://lh3.googleusercontent.com/XKHBiMVtmBxyAVkYllk5qC8RRlJQ2NyOxt3dwTJmdHATuS9uZMdGIyVMgvVA7rwS_yU=w720-h310-rw)](https://lh3.googleusercontent.com/XKHBiMVtmBxyAVkYllk5qC8RRlJQ2NyOxt3dwTJmdHATuS9uZMdGIyVMgvVA7rwS_yU=w720-h310-rw)
+[![mutt light](https://lh3.googleusercontent.com/EXG5g879XKsZnJL4dleSNuJwEpnX0s1-ntzJJNqK8LOnh6wB6lnKhvc4LOI2Q3SEeBaQ=w720-h310-rw)](https://lh3.googleusercontent.com/EXG5g879XKsZnJL4dleSNuJwEpnX0s1-ntzJJNqK8LOnh6wB6lnKhvc4LOI2Q3SEeBaQ=w720-h310-rw)
 
 
 # Manifest Dependencies
